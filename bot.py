@@ -14,6 +14,7 @@ async def quoted(ctx):
     quotes = [
         'Bruh moment',
         'I mean yea I think its working',
+        'It do be like that sometimes',
         'To give fuck or to get fucked, that is the question.',
     ]
 
