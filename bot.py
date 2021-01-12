@@ -21,7 +21,7 @@ async def quoted(ctx):
     response = random.choice(quotes)
     await ctx.send(response)
 
-@bot.command(name='shower_thought', help='Gives you a shower thought to think about.') #r/showerthoughts
+@bot.command(name='thought', help='Gives you a shower thought to think about.') #r/showerthoughts
 async def showerThought(ctx):
     showerthoughts = [
         '85 is divisible by 17.',
@@ -48,7 +48,7 @@ async def showerThought(ctx):
     thought = random.choice(showerthoughts)
     await ctx.send(thought)
 
-@bot.command(name='roll_dice', help='Simulates rolling dice.') #peepeepoopoo roll dice caveman style
+@bot.command(name='dice', help='Simulates rolling dice.') #peepeepoopoo roll dice caveman style
 async def roll(ctx, number_of_dice: int, number_of_sides: int):
     dice = [
         str(random.choice(range(1, number_of_sides + 1)))
