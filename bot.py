@@ -37,7 +37,7 @@ async def alpha_test(ctx):
 @bot.event
 async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
-        await ctx.send('You do not have the Alpha role for this command, please check and make sure all perms are set properly.')
+        await ctx.send('You do not have the right role for this command, please check and make sure all perms are set properly.')
 
 
 bot.run(TOKEN)
