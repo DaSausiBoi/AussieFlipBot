@@ -33,6 +33,16 @@ async def showerThought(ctx):
         'Turning the lights off when you are alone always seems to make things more quiet.',
         'Being able to tolerate the sound of your own voice in a video is probably the highest form of self acceptance.',
         'During a nuclear explosion, there is a certain radius where all the frozen supermarket pizzas are cooked to perfection.',
+        'In rap music, you are more respected the larger your city is. In country music, you are more respected the smaller your town is.',
+        'People are biodegradeable, but also terrible for the environment.',
+        'The Amish are talked about on the internet, but they are completely unaware of it.',
+        'The shin can be used as a tool to help find furniture in the dark.',
+        'We\'re all a little shit in the inside, literally.',
+        'The microwave beeping is only annoying when you don\'t need it.',
+        'Adding \"the\" to \"shit\" makes something described as bad turn into good.',
+        'It\'s impossible to blink faster than you normally do.',
+        'Gunpowder is spicy sand.',
+        'Cavemen probably laughed at farts before they could speak.', 
     ]
 
     thought = random.choice(showerthoughts)
