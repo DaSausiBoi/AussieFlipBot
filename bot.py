@@ -43,6 +43,7 @@ async def showerThought(ctx):
         'It\'s impossible to blink faster than you normally do.',
         'Gunpowder is spicy sand.',
         'Cavemen probably laughed at farts before they could speak.', 
+        'You learn to read, then you read to learn, but if you can’t read then you can’t learn, and if you can’t speak English, English is like an alien language.'
     ]
 
     thought = random.choice(showerthoughts)
