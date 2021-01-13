@@ -23,7 +23,7 @@ async def quoted(ctx):
     response = random.choice(quotes)
     await ctx.send(response)
 
-#@bot.command(name='prefix_change', help='Changes bot prefix.') #fuck this shit aint working
+#@bot.command(name='prefix_change', help='Changes bot prefix.') #fix this shit aint working
 #async def prefixSet(ctx, prefix: str):
     #prefixChange(prefix)
     #await ctx.send('Prefix set!')
@@ -58,7 +58,7 @@ async def showerThought(ctx):
     thought = random.choice(showerthoughts)
     await ctx.send(thought)
 
-@bot.command(name='dice', help='Simulates rolling dice.') #peepeepoopoo roll dice caveman style
+@bot.command(name='dice', help='Simulates rolling dice.') #peepeepoopoo roll dice gangnam style
 async def roll(ctx, number_of_dice: int, number_of_sides: int):
     dice = [
         str(random.choice(range(1, number_of_sides + 1)))
@@ -75,7 +75,7 @@ async def alpha_test(ctx):
 @bot.event #makes sure user has 'alpha' role
 async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
-        await ctx.send('You do not have the right role for this command, please check and make sure all perms are set properly.')
+        await ctx.send('You do not have the right permissions for this command.')
 
 
 @bot.event #sets bot status
