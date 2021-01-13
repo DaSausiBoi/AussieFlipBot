@@ -54,8 +54,8 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
         await ctx.send('You do not have the right permissions for this command.')
 
-client.remove_command(‘help’) #We delete default help command
-@client.command(pass_context=True) #Embeded help with list and details of commands
+bot.remove_command('help') #We delete default help command
+@bot.command(pass_context=True) #Embeded help with list and details of commands
 async def help(ctx):
     embed = discord.Embed(
         colour = discord.Colour.blue())
@@ -67,7 +67,7 @@ async def help(ctx):
     embed.add_field(name='?alpha_test', value='Test command for the \"Alpha\" role.', inline=False)
     await ctx.send(embed=embed)
 
-@client.event #react to any message
+@bot.event #react to any message
 async def on_message(ctx):
     if 'bruh' in ctx.content:
         emoji = '\N{EGGPLANT}'
