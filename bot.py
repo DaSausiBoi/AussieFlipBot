@@ -13,15 +13,10 @@ bot = commands.Bot(command_prefix) #figure out how to make this changeable throu
 
 @bot.command(name='quote', help='Responds with a random quote.') #idfk make more quotes
 async def quoted(ctx):
-    quotes = [
-        'Bruh moment',
-        'I mean yea I think its working',
-        'It do be like that sometimes',
-        'To give fuck or to get fucked, that is the question.',
-    ]
-
-    response = random.choice(quotes)
-    await ctx.send(response)
+    quotes = open('quote.txt').read().splitlines()
+    random.seed(a=None)
+    quote = random.choice(quotes)
+    await ctx.send(quote)
 
 @bot.command(name='ping', help='Responds with the response time of the bot.') #answeres with ms latency
 async def ping(ctx):
