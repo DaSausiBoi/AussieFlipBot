@@ -1,5 +1,6 @@
 import os
 import random
+import discord
 
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -7,7 +8,8 @@ from dotenv import load_dotenv
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN') #check .env for token
 
-bot = commands.Bot(command_prefix='!') #figure out how to make this changeable through discord commands
+command_prefix = '?'
+bot = commands.Bot(command_prefix) #figure out how to make this changeable through discord commands
 
 @bot.command(name='quote', help='Responds with a random quote.') #idfk make more quotes
 async def quoted(ctx):
@@ -20,6 +22,11 @@ async def quoted(ctx):
 
     response = random.choice(quotes)
     await ctx.send(response)
+
+#@bot.command(name='prefix_change', help='Changes bot prefix.') #fuck this shit aint working
+#async def prefixSet(ctx, prefix: str):
+    #prefixChange(prefix)
+    #await ctx.send('Prefix set!')
 
 @bot.command(name='thought', help='Gives you a shower thought to think about.') #r/showerthoughts
 async def showerThought(ctx):
@@ -37,11 +44,13 @@ async def showerThought(ctx):
         'People are biodegradeable, but also terrible for the environment.',
         'The Amish are talked about on the internet, but they are completely unaware of it.',
         'The shin can be used as a tool to help find furniture in the dark.',
+        'The children’s book \"If You Give a Mouse a Cookie\" is really about the gateways of addiction.'
         'We\'re all a little shit in the inside, literally.',
         'The microwave beeping is only annoying when you don\'t need it.',
         'Adding \"the\" to \"shit\" makes something described as bad turn into good.',
         'It\'s impossible to blink faster than you normally do.',
         'Gunpowder is spicy sand.',
+        'Future generations studying history will likely have to study tweets.',
         'Cavemen probably laughed at farts before they could speak.', 
         'You learn to read, then you read to learn, but if you can’t read then you can’t learn, and if you can’t speak English, English is like an alien language.'
     ]
@@ -69,4 +78,10 @@ async def on_command_error(ctx, error):
         await ctx.send('You do not have the right role for this command, please check and make sure all perms are set properly.')
 
 
-bot.run(TOKEN)
+@bot.event #sets bot status
+async def on_ready():
+    activity = discord.Game(name='Infinite Recharge at Home', type=3)
+    await bot.change_presence(status=discord.Status.idle, activity=activity) #discord.Status.online, discord.Status.idle, discord.Status.do_not_disturb
+    print('Bot is ready!')
+
+bot.run(TOKEN) 
