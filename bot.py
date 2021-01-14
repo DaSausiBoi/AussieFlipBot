@@ -1,6 +1,7 @@
 import os
 import random
 import discord
+import upsidedown
 
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -25,10 +26,10 @@ async def quote(ctx):
 async def ping(ctx):
     await ctx.send(f'Pong! {round (bot.latency * 1000)} ms ')
 
-#@bot.command(pass_context=True) #fix this shit aint working
-#async def prefixSet(ctx, prefix: str):
-    #prefixChange(prefix)
-    #await ctx.send('Prefix set!')
+@bot.command(pass_context=True) #hehe
+async def flip(ctx, fliptext: str): #string to list to string then back to list
+    textflip = upsidedown.transform(str(fliptext))
+    await ctx.send(textflip)
 
 @bot.command(pass_context=True) #r/showerthoughts
 async def thought(ctx):
