@@ -14,30 +14,30 @@ bot = commands.Bot(command_prefix) #figure out how to make this changeable throu
 
 bot.remove_command('help') #delete default help command
 
-@bot.command #idfk make more quotes
+@bot.command(pass_context=True) #idfk make more quotes
 async def quote(ctx):
     quotes = open('quote.txt').read().splitlines()
     random.seed(a=None)
     quote = random.choice(quotes)
     await ctx.send(quote)
 
-@bot.command #answeres with ms latency
+@bot.command(pass_context=True) #answeres with ms latency
 async def ping(ctx):
     await ctx.send(f'Pong! {round (bot.latency * 1000)} ms ')
 
-#@bot.command(name='prefix_change', help='Changes bot prefix.') #fix this shit aint working
+#@bot.command(pass_context=True) #fix this shit aint working
 #async def prefixSet(ctx, prefix: str):
     #prefixChange(prefix)
     #await ctx.send('Prefix set!')
 
-@bot.command #r/showerthoughts
+@bot.command(pass_context=True) #r/showerthoughts
 async def thought(ctx):
     thoughts = open('thoughts.txt').read().splitlines()
     random.seed(a=None)
     thought = random.choice(thoughts)
     await ctx.send(thought)
 
-@bot.command #peepeepoopoo roll dice gangnam style
+@bot.command(pass_context=True) #peepeepoopoo roll dice gangnam style
 async def dice(ctx, number_of_dice: int, number_of_sides: int):
     dice = [
         str(random.choice(range(1, number_of_sides + 1)))
@@ -45,7 +45,7 @@ async def dice(ctx, number_of_dice: int, number_of_sides: int):
     ]
     await ctx.send(', '.join(dice))
 
-@bot.command #test command for those with 'alpha' role
+@bot.command(pass_context=True) #test command for those with 'alpha' role
 @commands.has_role('Alpha')
 async def alpha_test(ctx):
     alphaResponse = 'Test clear, perms are set properly.'
