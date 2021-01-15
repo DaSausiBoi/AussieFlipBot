@@ -27,7 +27,7 @@ async def ping(ctx):
     await ctx.send(f'Pong! {round (bot.latency * 1000)} ms ')
 
 @bot.command(pass_context=True) #hehe
-async def flip(ctx, *, fliptext): #string to list to string then back to list
+async def flip(ctx, *, fliptext): #parses user input as a string then sends it to flip command
     textflip = upsidedown.transform(str(fliptext))
     await ctx.send(textflip)
 
