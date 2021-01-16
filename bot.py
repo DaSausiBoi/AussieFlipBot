@@ -52,6 +52,11 @@ async def alpha_test(ctx):
     alphaResponse = 'Test clear, perms are set properly.'
     await ctx.send(alphaResponse)
 
+@bot.command(pass_context=True) #spammer
+async def spam(ctx, *, cum):
+    alphaResponse = 'cum'
+    await ctx.send(alphaResponse)
+    
 @bot.event #makes sure user has 'alpha' role
 async def on_command_error(ctx, error):
     if isinstance(error, commands.errors.CheckFailure):
