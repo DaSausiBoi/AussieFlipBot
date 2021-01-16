@@ -54,8 +54,11 @@ async def alpha_test(ctx):
 
 @bot.command(pass_context=True) #spammer
 async def spam(ctx, *, cum):
-    alphaResponse = 'cum'
-    await ctx.send(alphaResponse)
+    pingNum = int(10)
+    while pingNum > 0:
+        alphaResponse = cum 
+        await ctx.send(alphaResponse)
+        pingNum = pingNum - 1
     
 @bot.event #makes sure user has 'alpha' role
 async def on_command_error(ctx, error):
@@ -69,6 +72,7 @@ async def help(ctx):
     embed.set_author(name='Commands List')
     embed.add_field(name='?flip (text)', value='Flips your text.', inline=False)
     embed.add_field(name='?ping', value='Returns bot respond time in milliseconds.', inline=False)
+    embed.add_field(name='?spam (text)', value='Spams text 10 times in a row.', inline=False)
     embed.add_field(name='?dice (# of dice) (highest dice value)', value='Simulates rolling dice.', inline=False)
     embed.add_field(name='?thought', value='Gives you a shower thought to think about.', inline=False)
     embed.add_field(name='?quote', value='Get inspired by a powerful quote.', inline=False)
