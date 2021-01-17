@@ -26,7 +26,7 @@ async def quote(ctx):
 async def ping(ctx):
     await ctx.send(f'Pong! {round (bot.latency * 1000)} ms ')
 
-@bot.command(pass_context=True) #hehe
+@bot.command(pass_context=True) #i just flipped a switch
 async def flip(ctx, *, fliptext): #parses user input as a string then sends it to flip command
     textflip = upsidedown.transform(str(fliptext))
     await ctx.send(textflip)
@@ -52,7 +52,7 @@ async def alpha_test(ctx):
     alphaResponse = 'Test clear, perms are set properly.'
     await ctx.send(alphaResponse)
 
-@bot.command(pass_context=True) #spammer
+@bot.command(pass_context=True) #spam musubi
 async def spam(ctx, *, cum):
     pingNum = int(10)
     while pingNum > 0:
