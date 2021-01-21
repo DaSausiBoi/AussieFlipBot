@@ -26,17 +26,25 @@ async def quote(ctx):
 async def ping(ctx):
     await ctx.send(f'Pong! {round (bot.latency * 1000)} ms ')
 
+@bot.command(pass_context=True) #69 nice
+async def sixtynine(ctx):
+    await ctx.send('nice')
+
 @bot.command(pass_context=True) #i just flipped a switch
 async def flip(ctx, *, fliptext): #parses user input as a string then sends it to flip command
     textflip = upsidedown.transform(str(fliptext))
     await ctx.send(textflip)
 
 @bot.command(pass_context=True) #r/showerthoughts
-async def thought(ctx):
+async def thonk(ctx):
     thoughts = open('thoughts.txt').read().splitlines()
     random.seed(a=None)
     thought = random.choice(thoughts)
     await ctx.send(thought)
+
+@bot.command(pass_context=True)
+async def money(ctx):
+    await ctx.send('I FEEL SO CLEAN LIKE A MONEY MACHINE')
 
 @bot.command(pass_context=True) #peepeepoopoo roll dice gangnam style
 async def dice(ctx, number_of_dice: int, number_of_sides: int):
@@ -74,8 +82,10 @@ async def help(ctx):
     embed.add_field(name='ping', value='Returns bot respond time in milliseconds.', inline=False)
     embed.add_field(name='spam (text)', value='Spams text 10 times in a row.', inline=False)
     embed.add_field(name='dice (# of dice) (highest dice value)', value='Simulates rolling dice.', inline=False)
-    embed.add_field(name='thought', value='Gives you a shower thought to think about.', inline=False)
+    embed.add_field(name='thonk', value='Gives you a shower thought to think about.', inline=False)
     embed.add_field(name='quote', value='Get inspired by a powerful quote.', inline=False)
+    embed.add_field(name='sixtynine', value='nice', inline=False)
+    embed.add_field(name='money', value='I FEEL SO CLEAN LIKE A MONEY MACHINE', inline=False)
     embed.add_field(name='alpha_test', value='Test command for the \"Alpha\" role.', inline=False)
     await ctx.send(embed=embed)
 
