@@ -10,7 +10,7 @@ print('Bot starting up...')
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN') #check .env for token
 
-blacklist =[617063458466299953]
+blacklist =[617063458466299953] #seb will forever be blacklisted
 
 command_prefix = '?'
 bot = commands.Bot(command_prefix) #figure out how to make this changeable through discord commands
