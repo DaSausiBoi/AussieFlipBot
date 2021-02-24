@@ -10,7 +10,7 @@ print('Bot starting up...')
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN') #check .env for token
 
-blacklist = [617063458466299953] #seb will forever be blacklisted
+blacklist =[617063458466299953] #seb will forever be blacklisted
 
 command_prefix = '?'
 bot = commands.Bot(command_prefix) #figure out how to make this changeable through discord commands
@@ -110,7 +110,6 @@ async def spam(ctx, *, cum):
         return
     else:
         pingNum = int(10)
-        await ctx.message.delete()
         while pingNum > 0:
             alphaResponse = cum 
             await ctx.send(alphaResponse)
